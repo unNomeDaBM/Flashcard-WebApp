@@ -39,7 +39,7 @@
         /* margin-top: 0;  */
         height: calc(76.66666vh - var(--margin)*2);
         width: calc(70.5svw - (var(--margin) + 60px)*2);
-        background-color: rgb(25, 25, 25);
+        background-color: rgb(48, 48, 48);
         border-radius: 36px;
 
         display: grid;
@@ -57,7 +57,7 @@
 
     p{
         font-size: 2rem;
-        padding: 12px;
+        padding: 16px 30px;
         background-color: rgb(44, 44, 44);
         border-radius: 20px;
     }

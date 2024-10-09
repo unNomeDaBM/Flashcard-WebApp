@@ -10,7 +10,7 @@
 
         <ol>
             <li v-if="questions.length == 0" class="placeholderQuestion">Ancora nessuna domanda aggiunta...</li>
-            <li v-for="question in questions" :key="question.id">
+            <li v-for="question in questions" :key="question.id" :class="questionsVisibility    ">
                 {{ question.q }} 
                 <br>
                 <span class="delete-x" @click="deleteFlash(question.id)">X</span>
@@ -20,8 +20,8 @@
         <button class="first" @click="popupVisibility = !popupVisibility">
             Add a new Flashcard
         </button>
-        <button @click="">
-            Hide questions (TODO)
+        <button @click="changeQuestionVisibility">
+            Hide questions
         </button>
     </div>
 
@@ -39,7 +39,7 @@
                 questions: [{q:"dsjkfhskdjhfkjsdh fkdsh jfh kjd hfjksh fhdj h", id: 0},
                             {q:"dsj fhskdjhf sdh dsh jfh kj d hfjksh dfcsdffhdj h", id: 1}
                 ],
-                hideQuestions: false,
+                questionsVisibility: "",
                 popupVisibility: false,
                 idCounter: 2,
             }
@@ -58,6 +58,13 @@
                         return;
                     }
                 })
+            },
+            changeQuestionVisibility(){
+                if (this.questionsVisibility == ""){
+                    this.questionsVisibility = "invisibleQuestion";
+                }else if (this.questionsVisibility == "invisibleQuestion"){
+                    this.questionsVisibility = "";
+                }
             }
         },
     }
@@ -117,6 +124,10 @@
     }
     button, .first{
         margin: 8px 0 0 0;
+    }
+
+    .invisibleQuestion{
+        color: rgba(0, 0, 0, 0);
     }
 
     ::-webkit-scrollbar {

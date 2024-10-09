@@ -80,6 +80,11 @@
 </script>
 
 <style>
+  @font-face{
+    font-family: Poppins-regular;
+    src: url("./Assets/Font/Poppins-Regular.ttf");
+  }
+
   *{
     margin: 0;
     border: 0;
@@ -89,9 +94,9 @@
   }
 
   body{
-    background-color: rgb(9, 46, 46);
+    background-color: rgb(33, 33, 33);
     color: rgb(251, 255, 240);
-
+    font-family: Poppins-regular, Verdana, Geneva, Tahoma, sans-serif;
     height: 100vh;
   }
 
@@ -121,6 +126,12 @@
     grid-row: 2 / 6;
     align-self: center;
     justify-self: center;
+  }
+
+  .flashcard-buttons{
+    grid-column: 3 / 8;
+    grid-row: 6 / 7;
+    align-self: center;
   }
 
 </style>

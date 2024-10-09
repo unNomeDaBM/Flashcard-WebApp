@@ -33,6 +33,31 @@
     }
 </script>
 
-<style>
+<style scoped>
+    .container{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 200px;
+    }
 
+    button{
+        padding: 24px 32px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        color: inherit;
+        font-family: inherit;
+
+        &:nth-child(1){
+            background-color: rgb(151, 13, 13);
+        }
+        &:nth-child(2){
+            background-color: rgb(159, 159, 36);
+        }
+        &:nth-child(3){
+            background-color: rgb(36, 137, 13);
+        }
+        &:nth-child(4){
+            background-color: rgb(116, 116, 116);
+        }
+    }
 </style>

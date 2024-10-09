@@ -1,3 +1,3 @@
 # Flashcard webapp
 
-Just a WebApp, my first project using ViuJs 3 + Vite. 
+Just a WebApp, my first project using VueJs 3 + Vite. 
