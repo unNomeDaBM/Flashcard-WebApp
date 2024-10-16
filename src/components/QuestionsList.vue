@@ -113,6 +113,7 @@
         font-weight: bolder;
         height: 0px;
         user-select: none;
+        cursor: pointer;
     }
 
     button{

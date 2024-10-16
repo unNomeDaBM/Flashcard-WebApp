@@ -42,12 +42,10 @@
 <style scoped>
     .background-container{
         position: absolute;
-        height: 100%;
-        width: 100%;
+        inset: 0;
         background-color: rgba(0, 0, 0, 0.4);
 
         display: grid;
-        justify-items: center;
 
         padding: calc(50vh - 200px) calc(50vw - 300px);
     }

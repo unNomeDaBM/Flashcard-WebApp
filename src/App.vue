@@ -1,4 +1,7 @@
 <template>
+  <div class="result-display">
+    <ResultDisplay :JSONQuestionsResults="JSONQuestionsResult" v-if="isShowingResults"/>
+  </div>
   <h1 class="title">Flashcard Game</h1>
   <div class="question-list">
     <QuestionsList ref="questionList"/>
@@ -16,12 +19,15 @@
   import QuestionsList from './components/QuestionsList.vue';
   import FlashcardDisplay from './components/FlashcardDisplay.vue'
   import FlashcardButtons from './components/FlashcardButtons.vue';
+  import ResultDisplay from './components/ResultDisplay.vue';
 
   export default{
     data(){
       return{
         isGameRunning: false,
+        isShowingResults: false,
         currentQuestion: "",
+        JSONQuestionsResult: null,
         questionsResults: {
           "idk" : [],
           "s": [],
@@ -68,13 +74,16 @@
         }
       },
       showResult(){
-        console.log(this.questionsResults);
+        this.JSONQuestionsResult = JSON.parse(JSON.stringify(this.questionsResults));
+        console.log(this.JSONQuestionsResult);
+        this.isShowingResults = true;
       }
     },
     components:{
       QuestionsList,
       FlashcardDisplay,
       FlashcardButtons,
+      ResultDisplay
     }
   }
 </script>
@@ -91,6 +100,7 @@
     padding: 0;
     box-sizing: border-box;
     word-wrap: break-word;
+    cursor: default;
   }
 
   body{
@@ -132,6 +142,10 @@
     grid-column: 3 / 8;
     grid-row: 6 / 7;
     align-self: center;
+  }
+
+  button{
+    cursor: pointer;
   }
 
 </style>
