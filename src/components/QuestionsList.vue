@@ -36,9 +36,7 @@
         },
         data(){
             return{
-                questions: [{q:"dsjkfhskdjhfkjsdh fkdsh jfh kjd hfjksh fhdj h", id: 0},
-                            {q:"dsj fhskdjhf sdh dsh jfh kj d hfjksh dfcsdffhdj h", id: 1}
-                ],
+                questions: [],
                 questionsVisibility: "",
                 popupVisibility: false,
                 idCounter: 2,
