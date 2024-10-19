@@ -1,6 +1,6 @@
 <template>
   <div class="result-display">
-    <ResultDisplay :JSONQuestionsResults="JSONQuestionsResult" v-if="isShowingResults"/>
+    <ResultDisplay :JSONQuestionsResults="JSONQuestionsResult" v-if="isShowingResults" @closeResult="closeResult"/>
   </div>
   <h1 class="title">Flashcard Game</h1>
   <div class="question-list">
@@ -75,8 +75,11 @@
       },
       showResult(){
         this.JSONQuestionsResult = JSON.parse(JSON.stringify(this.questionsResults));
-        console.log(this.JSONQuestionsResult);
         this.isShowingResults = true;
+      },
+      closeResult(){
+        this.JSONQuestionsResult = null;
+        this.isShowingResults = false;
       }
     },
     components:{
