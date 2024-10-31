@@ -10,7 +10,7 @@
 
         <ol>
             <li v-if="questions.length == 0" class="placeholderQuestion">Ancora nessuna domanda aggiunta...</li>
-            <li v-for="question in questions" :key="question.id" :class="questionsVisibility    ">
+            <li v-for="question in questions" :key="question.id" :class="questionsVisibilityClass    ">
                 {{ question.q }} 
                 <br>
                 <span class="delete-x" @click="deleteFlash(question.id)">X</span>
@@ -21,7 +21,7 @@
             Add a new Flashcard
         </button>
         <button @click="changeQuestionVisibility">
-            Hide questions
+            {{ (questionsVisibilityClass == "") ? "Hide" : "Show"  }} questions
         </button>
     </div>
 
@@ -37,9 +37,9 @@
         data(){
             return{
                 questions: [],
-                questionsVisibility: "",
+                questionsVisibilityClass: "",
                 popupVisibility: false,
-                idCounter: 2,
+                idCounter: 0,
             }
         },
         methods: {
@@ -58,10 +58,10 @@
                 })
             },
             changeQuestionVisibility(){
-                if (this.questionsVisibility == ""){
-                    this.questionsVisibility = "invisibleQuestion";
-                }else if (this.questionsVisibility == "invisibleQuestion"){
-                    this.questionsVisibility = "";
+                if (this.questionsVisibilityClass == ""){
+                    this.questionsVisibilityClass = "invisibleQuestion";
+                }else if (this.questionsVisibilityClass == "invisibleQuestion"){
+                    this.questionsVisibilityClass = "";
                 }
             }
         },

@@ -61,4 +61,10 @@
         background-color: rgb(44, 44, 44);
         border-radius: 20px;
     }
+
+    @media (max-width: 1160px){
+        .container{
+            width:90%
+        }
+    }
 </style>

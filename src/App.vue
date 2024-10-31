@@ -12,7 +12,6 @@
   <div class="flashcard-buttons">
     <FlashcardButtons v-if="isGameRunning" @buttonsClicked="(res)=>{mainButtonsHandler(res)}"/>
   </div>
-
 </template>
 
 <script>
@@ -149,6 +148,23 @@
 
   button{
     cursor: pointer;
+  }
+
+
+  @media (max-width: 1160px) {
+    #app{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title{
+      padding: 30px 30px 0 30px;
+    }
+
+    .flashcard-display{
+      width: 100%;
+    }
   }
 
 </style>
